@@ -20,7 +20,7 @@ if (navigator.geolocation) {
 
 var map = L.map('map', {
     center: [10.5656,76.132 ],
-    zoom: 5
+    zoom: 25
 });
 // var map = L.map('map').setView([51.505, -0.09], 13);
 //  const map =L.map('map').setView([0,0],10)
@@ -35,7 +35,7 @@ const markers={}
 
 socket.on("receive-location",(data)=>{
   const {id,latitude,longitude}=data
-  map.setView([latitude,longitude],5)
+  map.setView([latitude,longitude],25)
   if(markers[id]){
     markers[id].setLatLng([latitude,longitude])
   }
